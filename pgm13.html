@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>String and Number Operations</title>
+</head>
+<body>
+
+  <h2>String and Number Operations</h2>
+
+  <label>Enter a string:</label><br>
+  <input type="text" id="str1"><br><br>
+
+  <label>Enter number:</label><br>
+  <input type="number" id="id1"><br><br>
+
+  <label>Enter power:</label><br>
+  <input type="number" id="id2"><br><br>
+
+  <button onclick="add()">Get Result</button>
+
+  <hr>
+
+  <label>Length of the String:</label><br>
+  <input type="text" id="strlen" readonly><br><br>
+
+  <label>Slice of the String (from 5 to 10):</label><br>
+  <input type="text" id="strsli" readonly><br><br>
+
+  <label><b><u>Power of the Number</u></b></label><br>
+  <input type="text" id="ans" readonly><br><br>
+
+  <label><b><u>Square Root of the Number</u></b></label><br>
+  <input type="text" id="sqr" readonly><br><br>
+
+  <label><b><u>Ceil of the Number</u></b></label><br>
+  <input type="text" id="ceil" readonly><br><br>
+
+  <label><b><u>Floor of the Number</u></b></label><br>
+  <input type="text" id="floor" readonly><br><br>
+
+  <script>
+    function add() {
+      // Get values
+      let s = document.getElementById("str1").value;
+      let a = parseFloat(document.getElementById("id1").value);
+      let b = parseFloat(document.getElementById("id2").value);
+
+      // Input validation
+      if (isNaN(a) || isNaN(b)) {
+        alert("Please enter valid numeric values!");
+        return;
+      }
+
+      // String operations
+      let sl = s.length;
+      let sli = s.slice(5, 11); // Extracts characters from index 5 to 10
+
+      // Math operations
+      let c = Math.pow(a, b);
+      let n = Math.sqrt(a);
+      let m = Math.ceil(a);
+      let i = Math.floor(a);
+
+      // Display results
+      document.getElementById("strlen").value = sl;
+      document.getElementById("strsli").value = sli;
+      document.getElementById("ans").value = c;
+      document.getElementById("sqr").value = n;
+      document.getElementById("ceil").value = m;
+      document.getElementById("floor").value = i;
+    }
+  </script>
+
+</body>
+</html>
+
